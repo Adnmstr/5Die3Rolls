@@ -8,7 +8,7 @@ using namespace std;
 
 void rollDie(Die *ptr);
 void showDice(Die *ptr);
-int getTotalScore(Die);
+int getTotalScore(Die *ptr);
 
 int main()
 {
@@ -27,9 +27,9 @@ int main()
 }
 
 //--------------------------------------------------------------------------------------
-// 
-// 
-// 
+// Function to roll an array of dice
+// Input - Die: *ptr
+// Output - void
 //--------------------------------------------------------------------------------------
 void rollDie(Die *ptr)
 {
@@ -44,7 +44,7 @@ void rollDie(Die *ptr)
 
 //--------------------------------------------------------------------------------------
 // Function to display the die number and its value
-// Input - Die: Die[]
+// Input - Die: *ptr
 // Output - void
 //--------------------------------------------------------------------------------------
 void showDice(Die *ptr)
@@ -64,13 +64,18 @@ void showDice(Die *ptr)
 
 
 //--------------------------------------------------------------------------------------
-// 
-// 
-// 
+// Function to get the total score of all the dice
+// Input - Die: *ptr
+// Output - int
 //--------------------------------------------------------------------------------------
-int getTotalScore(Die[])
+int getTotalScore(Die *ptr)
 {
-
+	int count;
+	for (int i = 0; i < 5; i++)
+	{
+		count += ptr[i].getValue;
+	}
+	return count;
 }
 //--------------------------------------------------------------------------------------
 // End of getTotalScore function
